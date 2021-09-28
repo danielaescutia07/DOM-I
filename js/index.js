@@ -42,6 +42,21 @@ const siteContent = {
 //NavBar
 
 const links = document.querySelectorAll("nav a");
+links.forEach((link,i) => link.textContent = Object.values(siteContent.nav)[i]);
+links.forEach((link,i) => link.style.color = "green");
+
+//Added Links
+const events = document.createElement("a");
+events.textContent = "Events";
+events.href = "#";
+document.querySelector("nav").prepend(events);
+events.style.color = "green";
+
+const reviews = document.createElement("a");
+reviews.textContent = "Reviews";
+reviews.href = "#";
+document.querySelector("nav").appendChild(reviews);
+reviews.style.color = "green";
 
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
